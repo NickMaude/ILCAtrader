@@ -1,3 +1,4 @@
+import mysql.connector
 import asyncio
 import requests
 import re
@@ -6,8 +7,20 @@ import listing
 from bs4 import BeautifulSoup
 from random import randint
 
+db=mysql.connector.connect(
+    host = "localhost",
+    user = "root",
+    passwd = "Fuzyman#123",
+    database = "posting",
+    port='3306'
+)
+
+mycursor = db.cursor()
+
 
 def find_all_postings(max_pages):
+
+
     #list of listing objects
     list = []
 
@@ -41,7 +54,15 @@ def find_all_postings(max_pages):
 
             # create new listing object and add it to the list
             list.append(listing.listing(date_posted, title,href,data[1],data[0],data[2],data[3]))
-            print(list[-1])
+            post = listing.listing(date_posted, title, href, data[1], data[0], data[2], data[3])
+
+            mycursor.execute(
+                "INSERT INTO listings (date_posted, title, location ,url ,year ,cost ,image) VALUES (%s,%s,%s,%s,%s,%s,%s)",
+                (date_posted, title, href, data[1], data[0], data[2], data[3])
+            )
+            db.commit()
+            #mycursor.execute()
+            #print(list[-1])
             it = it+1
         page += 1
     return list
@@ -64,13 +85,3 @@ def get_listing_data(item_url):
     #   cost = items[11].string
 
     return (items[6].string,items[10].string,items[11].string,image)
-
-def sort_by_datePosted(list):
-    for posting in list:
-        print(posting)
-    list.sort(key=lambda x : x.year, reverse=True)
-    for posting in list:
-        print(posting)
-
-
-find_all_postings(2)

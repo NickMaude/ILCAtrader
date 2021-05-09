@@ -14,5 +14,5 @@ class listing:
                (self.date_posted, self.title, self.location, self.url, self.year,self.cost,self.image)
 
     def __repr__(self):
-        return "Title: % s || Location: % s || URL: % s || Year: % s || Cost: % s || Image: % s" % \
-               (self.title, self.location, self.url, self.year,self.cost,self.image)
+        return " % s , % s , % s , % s , % s, % s, % s" % \
+               (self.date_posted, self.title, self.location, self.url, self.year, self.cost, self.image)
