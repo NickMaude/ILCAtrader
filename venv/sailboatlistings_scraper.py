@@ -40,6 +40,7 @@ def find_all_postings(max_pages):
             href = "" + link.get('href')
             # just the text, not the HTML
             title = link.string
+            title = '<p><a href=' + href+'>' + title+'</a></p>'
 
             #get location, year, cost, image and date posted from listing
             data = get_listing_data(href)
@@ -55,10 +56,12 @@ def find_all_postings(max_pages):
             # create new listing object and add it to the list
             list.append(listing.listing(date_posted, title,href,data[1],data[0],data[2],data[3]))
             post = listing.listing(date_posted, title, href, data[1], data[0], data[2], data[3])
+            #data[1] == date_posted
+            #data[0] == location
 
             mycursor.execute(
-                "INSERT INTO listings (date_posted, title, location ,url ,year ,cost ,image) VALUES (%s,%s,%s,%s,%s,%s,%s)",
-                (date_posted, title, href, data[1], data[0], data[2], data[3])
+                "INSERT INTO listings (date_posted, title, location ,year ,cost ,image) VALUES (%s,%s,%s,%s,%s,%s)",
+                (date_posted, title, data[1], data[0], data[2], data[3])
             )
             db.commit()
             #mycursor.execute()
@@ -78,6 +81,7 @@ def get_listing_data(item_url):
     #if posting has
     if image != None:
         image = "https://www.sailboatlistings.com/" + image.get('src')
+        image = '<img src =' + image + ' "Trulli" width="50" height="33">'
 
     #return the year, location, cost, image from the posting
     #   year = items[6].string
