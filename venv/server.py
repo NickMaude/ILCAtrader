@@ -2,6 +2,7 @@ import mysql.connector
 import sailingforums_scraper
 import sailboatlistings_scraper
 import export_to_HTML
+import export_to_HTML1
 
 db=mysql.connector.connect(
     host = "localhost",
@@ -18,7 +19,7 @@ def rebase():
     mycursor.execute(
         "CREATE TABLE listings (date_posted VARCHAR(50), title VARCHAR(500), location VARCHAR(500), year VARCHAR(10), cost VARCHAR(10),image TEXT(90000))"
     )
-    sailingforums_scraper.find_all_postings(13)
-    sailboatlistings_scraper.find_all_postings(2)
-    export_to_HTML.export()
+    sailingforums_scraper.find_all_postings(1)
+    sailboatlistings_scraper.find_all_postings(1)
+    export_to_HTML1.export()
 rebase()

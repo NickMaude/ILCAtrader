@@ -87,7 +87,7 @@ def get_listing_data(item_url):
         image = attachment.find('img')
         if image is not None:
             image = 'https://sailingforums.com' + image.get('src')
-            image = '<img src =' + image + ' "Trulli" width="50" height="33">'
+            image = '<img src =' + image + ' "Trulli" width="100" height="66">'
             images.append(str(image))
 
     if len(images) == 0:

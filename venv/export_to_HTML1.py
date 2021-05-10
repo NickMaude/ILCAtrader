@@ -14,25 +14,33 @@ mycursor = db.cursor()
 
 def is_null(s):
     if s is None:
-        return "None"
+        return "N/A"
     return str(s)
 
 def export():
     html = r"""
     <html> 
     <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Data</title>
+        <link rel="stylesheet" href="lasers.css">
     </head>
-    <body>
-    <table border=0>
-    <tr>
-    <td bgcolor=#87cefa class='medium'>date_posted</td>
-    <td bgcolor=#87cefa class='medium'>title</td>
-    <td bgcolor=#87cefa class='medium'>location</td>
-    <td bgcolor=#87cefa class='medium'>year</td>
-    <td bgcolor=#87cefa class='medium'>cost</td>
-    <td bgcolor=#87cefa class='medium'>image</td>
-    </tr>"""
+    <h2>ILCA Finder</h2>
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+            <tr>
+                <th> Date Posted</th>
+                <th> Title</th>
+                <th> Location</th>
+                <th> Year </th>
+                <th> Cost</th>
+                <th> Images</th>
+            </tr>
+        </thead>
+        <body>
+        """
+
+
+
 
     mycursor.execute("SELECT * FROM listings")
     result = mycursor.fetchall()
@@ -55,7 +63,7 @@ def export():
                      r"<td class='normal' valign='top'>" + is_null(posting[5]) + r"</td>" +
                      "</tr>")
         html = html + itemHTML
-    post = r"</tr></table></body></html>"
+    post = r"<tbody></table></div></html>"
     html = html + post
 
     if os.path.exists("lasers.html"):
@@ -63,3 +71,4 @@ def export():
 
     output = open("lasers.html", "x")
     output.write(html)
+export()

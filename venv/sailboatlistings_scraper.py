@@ -81,7 +81,7 @@ def get_listing_data(item_url):
     #if posting has
     if image != None:
         image = "https://www.sailboatlistings.com/" + image.get('src')
-        image = '<img src =' + image + ' "Trulli" width="50" height="33">'
+        image = '<img src =' + image + '  "Trulli" width="100" height="66">'
 
     #return the year, location, cost, image from the posting
     #   year = items[6].string
