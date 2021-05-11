@@ -18,7 +18,7 @@ db = mysql.connector.connect(
 
 mycursor = db.cursor()
 
-
+# idiomatic conversion from month abbreviation to number
 def month_to_number(s):
     if s == 'Jan':
         return '01'
@@ -48,9 +48,6 @@ def month_to_number(s):
 
 
 def find_all_postings(max_pages):
-    # list of listing objects
-    list = []
-
     page = 1
     while page <= max_pages:
         url = "https://sailingforums.com/forums/Laser_Sales/page-" + str(page)
@@ -59,9 +56,7 @@ def find_all_postings(max_pages):
         plain_text = source_code.text
         # BeautifulSoup objects
         soup = BeautifulSoup(plain_text, "html.parser")
-        dates_posted = soup.find_all('time', {'data-date-string'})
 
-        it = 0
         # find link to each posting
         for item in soup.findAll('div', {'class': 'structItem-title'}):
             link = item.find('a')
@@ -72,12 +67,11 @@ def find_all_postings(max_pages):
             if len(title) > 60:
                 title = title[0:60] + "..."
             title = '<p><a href=' + href + '>' + title + '</a></p>'
+
             # get location, year, cost, image and date posted from listing
             data = get_listing_data(href)
 
-            # create new listing object and add it to the list
-            # list.append(listing.listing(data[4], title, href, data[1], data[0], data[2], data[3]))
-
+            # indexes for reference
             # data[5] = numrical_date
             # data[4] = date_posted
             # data[3] = array of images
@@ -90,12 +84,11 @@ def find_all_postings(max_pages):
                 (data[4], title, data[1], data[0], data[2], data[3], data[5])
             )
             db.commit()
-
-            # print(list[-1])
-            it = it + 1
         page += 1
 
 
+# convert date (month name, day, year) to SQL Date type (month number-day-year)
+#   ex - May 05, 2021 to 2021-
 def get_numrical_date(date_posted):
     if len(date_posted) > 15:
         return date.today().strftime("%Y-%m-%d")
@@ -107,18 +100,22 @@ def get_numrical_date(date_posted):
         day = '0' + day[0]
     return year + '-' + month + '-' + day
 
-
+# scrape data from the individual listings page
 def get_listing_data(item_url):
+    # array of image hrefs
     images = []
+
+    # all the source code
     source_code = requests.get(item_url)
     plain_text = source_code.text
     soup = BeautifulSoup(plain_text, "html.parser")
 
+    # date to be displayed
     date_posted = soup.find('time', {'class': 'u-dt'}).text
-
+    # SQL date type to be searched
     numerical_date = get_numrical_date(date_posted)
 
-    #find cost and location if provided
+    # find cost and location if provided
     items = soup.findAll('dl', {'class': 'pairs pairs--columns pairs--fixedSmall'})
     if len(items) > 0:
         cost = items[0].find('dd').text.strip()
@@ -130,7 +127,7 @@ def get_listing_data(item_url):
 
     attachments = soup.findAll('li', {'class': 'attachment'})
 
-    # if there is image atachments then there is no need to search for other images
+    # if there is image attachments then there is no need to search for other images
     is_attachment = False
 
     # find images from post attachments

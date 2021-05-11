@@ -24,6 +24,16 @@ def export():
         <link rel="stylesheet" href="lasers.css">
     </head>
     <h2>ILCA Finder</h2>
+    <section class="container">
+  <div class="dropdown">
+    <select name="one" class="dropdown-select">
+      <option value="">Select…</option>
+      <option value="1">Option #1</option>
+      <option value="2">Option #2</option>
+      <option value="3">Option #3</option>
+    </select>
+  </div>
+</section>
     <div class="table-wrapper">
     <table class="fl-table">
         <thead>
@@ -42,7 +52,6 @@ def export():
     mycursor.execute("SELECT * FROM listings ORDER BY date DESC ")
     result = mycursor.fetchall()
     for posting in result:
-
         # row orders for reference
         # date = posting[0]
         # title = posting[1]
@@ -60,6 +69,7 @@ def export():
                      r"<td class='normal' valign='top'>" + is_null(posting[5]) + r"</td>" +
                      "</tr>")
         html = html + itemHTML
+
     post = r"<tbody></table></div></html>"
     html = html + post
 

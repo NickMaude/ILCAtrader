@@ -18,7 +18,7 @@ db = mysql.connector.connect(
 
 mycursor = db.cursor()
 
-
+# idiomatic conversion from month abbreviation to number
 def month_to_number(s):
     if s == 'Jan':
         return '01'
@@ -50,14 +50,13 @@ def month_to_number(s):
 def find_all_postings(max_pages):
     page = 1
     while page <= max_pages:
-        url = "https://www.sailboatlistings.com/cgi-bin/saildata/db.cgi?db=default&uid=default&manufacturer=Laser&view_records=1&sb=date&so=descend&nh=" + str(
-            page)
+        url = "https://www.sailboatlistings.com/cgi-bin/saildata/db.cgi?db=default&uid=default&manufacturer=Laser&view_records=1&sb=date&so=descend&nh=" + \
+              str(page)
         source_code = requests.get(url)
         # just the code, no headers
         plain_text = source_code.text
         # BeautifulSoup objects
         soup = BeautifulSoup(plain_text, "html.parser")
-        dates_posted = soup.find_all('span', {'class': {'details'}})
 
         it = 0
         # find link to each posting
@@ -73,7 +72,6 @@ def find_all_postings(max_pages):
 
             # get location, year, cost, image and date posted from listing
             data = get_listing_data(href)
-
             date_posted = soup.find_all('span', {'class': {'details'}})
 
             if 'Featured Sailboat' in date_posted[it].text:
@@ -85,12 +83,7 @@ def find_all_postings(max_pages):
             day = date_posted[0:2]
             month = date_posted[3:6]
             date_posted = month + " " + day + " ," + year
-
             number_date = year + "-" + month_to_number(month) + "-" + day
-
-
-            # data[1] == date_posted
-            # data[0] == location
 
             mycursor.execute(
                 "INSERT INTO listings (date_posted, title, location ,year ,cost ,image ,date) VALUES (%s,%s,%s,%s,%s,%s,%s)",
@@ -107,11 +100,11 @@ def get_listing_data(item_url):
     plain_text = source_code.text
     soup = BeautifulSoup(plain_text, "html.parser")
 
-    # gather all boled words
+    # gather all bolded words
     items = soup.findAll('font', {'face': 'Arial, Helvetica, sans-serif'})
     image = soup.find('img', {'class': 'mainsailboatphoto'})
     # if posting has
-    if image != None:
+    if image is not None:
         image = "https://www.sailboatlistings.com/" + image.get('src')
         image = '<img src =' + image + '  "Trulli" width="100" height="66">'
 
@@ -120,4 +113,4 @@ def get_listing_data(item_url):
     #   location = items[10].string
     #   cost = items[11].string
 
-    return (items[6].string, items[10].string, items[11].string, image)
+    return items[6].string, items[10].string, items[11].string, image
