@@ -24,7 +24,7 @@ def export():
         <link rel="stylesheet" href="lasers.css">
     </head>
     <h2>ILCA Finder</h2>
-<div class="table-wrapper">
+    <div class="table-wrapper">
     <table class="fl-table">
         <thead>
             <tr>
@@ -39,10 +39,7 @@ def export():
         <body>
         """
 
-
-
-
-    mycursor.execute("SELECT * FROM listings")
+    mycursor.execute("SELECT * FROM listings ORDER BY date DESC ")
     result = mycursor.fetchall()
     for posting in result:
 
@@ -71,4 +68,3 @@ def export():
 
     output = open("lasers.html", "x")
     output.write(html)
-export()

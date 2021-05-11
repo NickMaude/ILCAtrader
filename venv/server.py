@@ -14,12 +14,13 @@ db=mysql.connector.connect(
 
 mycursor = db.cursor()
 
+
 def rebase():
     mycursor.execute("DROP TABLE IF EXISTS listings")
     mycursor.execute(
-        "CREATE TABLE listings (date_posted VARCHAR(50), title VARCHAR(500), location VARCHAR(500), year VARCHAR(10), cost VARCHAR(10),image TEXT(90000))"
+        "CREATE TABLE listings (date_posted VARCHAR(50), title VARCHAR(500), location VARCHAR(500), year VARCHAR(10), cost VARCHAR(10),image TEXT(90000), date DATE)"
     )
-    sailingforums_scraper.find_all_postings(1)
-    sailboatlistings_scraper.find_all_postings(1)
+    sailingforums_scraper.find_all_postings(10)
+    sailboatlistings_scraper.find_all_postings(2)
     export_to_HTML1.export()
 rebase()

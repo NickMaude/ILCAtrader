@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f9707fb5-3a3a-4296-9ccf-f92ab522a6c2" name="Default" comment="export mySQL to HTML">
-      <change afterPath="$PROJECT_DIR$/.idea/cssxfire.xml" afterDir="false" />
+    <list default="true" id="f9707fb5-3a3a-4296-9ccf-f92ab522a6c2" name="Default" comment="stylesheet">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/export_to_HTML.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/export_to_HTML.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/export_to_HTML1.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/export_to_HTML1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/lasers.html" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lasers.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/sailboatlistings_scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/sailboatlistings_scraper.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/sailingforums_scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/sailingforums_scraper.py" afterDir="false" />
@@ -103,29 +102,7 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager" selected="Python.export_to_HTML1">
-    <configuration name="export_to_HTML" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="laserfinder" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/venv" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/venv/export_to_HTML.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.server (1)">
     <configuration name="export_to_HTML1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="laserfinder" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -148,7 +125,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="sailingforums_scraper" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="sailboatlistings_scraper" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="laserfinder" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -157,7 +134,29 @@
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/venv" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/venv/sailboatlistings_scraper.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="sailingforums_scraper" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="laserfinder" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/venv" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -215,19 +214,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.sailingforums_scraper" />
       <item itemvalue="Python.server" />
-      <item itemvalue="Python.export_to_HTML" />
       <item itemvalue="Python.server (1)" />
       <item itemvalue="Python.export_to_HTML1" />
+      <item itemvalue="Python.sailboatlistings_scraper" />
+      <item itemvalue="Python.sailingforums_scraper" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.export_to_HTML1" />
         <item itemvalue="Python.server (1)" />
-        <item itemvalue="Python.export_to_HTML" />
-        <item itemvalue="Python.server" />
         <item itemvalue="Python.sailingforums_scraper" />
+        <item itemvalue="Python.server" />
+        <item itemvalue="Python.sailboatlistings_scraper" />
+        <item itemvalue="Python.export_to_HTML1" />
       </list>
     </recent_temporary>
   </component>
@@ -244,7 +243,7 @@
       <updated>1620506118875</updated>
       <workItem from="1620591999707" duration="16325000" />
       <workItem from="1620660789307" duration="9671000" />
-      <workItem from="1620672221236" duration="2517000" />
+      <workItem from="1620672221236" duration="18058000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1620584102481</created>
@@ -274,7 +273,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620667699317</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="stylesheet">
+      <created>1620674963412</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1620674963413</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -314,15 +320,16 @@
     <MESSAGE value="initial commit" />
     <MESSAGE value="output to mySQL table and added rebase function" />
     <MESSAGE value="export mySQL to HTML" />
-    <option name="LAST_COMMIT_MESSAGE" value="export mySQL to HTML" />
+    <MESSAGE value="stylesheet" />
+    <option name="LAST_COMMIT_MESSAGE" value="stylesheet" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/laserfinder$server__1_.coverage" NAME="server (1) Coverage Results" MODIFIED="1620671276284" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
-    <SUITE FILE_PATH="coverage/laserfinder$funtable.coverage" NAME="funtable Coverage Results" MODIFIED="1620674203928" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
-    <SUITE FILE_PATH="coverage/laserfinder$sailboatlistings_scraper.coverage" NAME="sailboatlistings_scraper Coverage Results" MODIFIED="1620595611213" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
+    <SUITE FILE_PATH="coverage/laserfinder$server__1_.coverage" NAME="server (1) Coverage Results" MODIFIED="1620692806657" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
+    <SUITE FILE_PATH="coverage/laserfinder$funtable.coverage" NAME="export_to_HTML1 Coverage Results" MODIFIED="1620675071020" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
+    <SUITE FILE_PATH="coverage/laserfinder$sailboatlistings_scraper.coverage" NAME="sailboatlistings_scraper Coverage Results" MODIFIED="1620681073565" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
     <SUITE FILE_PATH="coverage/laserfinder$export_to_HTML.coverage" NAME="export_to_HTML Coverage Results" MODIFIED="1620667379159" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
-    <SUITE FILE_PATH="coverage/laserfinder$server.coverage" NAME="server Coverage Results" MODIFIED="1620660813293" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
-    <SUITE FILE_PATH="coverage/laserfinder$sailingforums_scraper.coverage" NAME="sailingforums_scraper Coverage Results" MODIFIED="1620596704266" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
+    <SUITE FILE_PATH="coverage/laserfinder$server.coverage" NAME="server Coverage Results" MODIFIED="1620690617235" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
+    <SUITE FILE_PATH="coverage/laserfinder$sailingforums_scraper.coverage" NAME="sailingforums_scraper Coverage Results" MODIFIED="1620690784557" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
     <SUITE FILE_PATH="coverage/laserfinder$main.coverage" NAME="server Coverage Results" MODIFIED="1620620649155" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
   </component>
   <component name="editorHistoryManager">
