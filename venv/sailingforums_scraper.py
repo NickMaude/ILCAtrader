@@ -119,7 +119,7 @@ def get_listing_data(item_url):
     items = soup.findAll('dl', {'class': 'pairs pairs--columns pairs--fixedSmall'})
     if len(items) > 0:
         cost = items[0].find('dd').text.strip()
-        cost = "$" + '{:,}'.format(int(cost))
+        #cost = "$" + '{:,}'.format(int(cost))
         location = items[1].find('dd').text.strip().lower().title()
     else:
         cost = None
@@ -156,4 +156,4 @@ def get_listing_data(item_url):
         # flatten array of html images
         images = ' '.join(map(str, images))
 
-    return None, location, str(cost), images, date_posted, numerical_date
+    return None, location, cost, images, date_posted, numerical_date

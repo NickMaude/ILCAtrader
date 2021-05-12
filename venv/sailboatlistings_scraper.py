@@ -18,6 +18,7 @@ db = mysql.connector.connect(
 
 mycursor = db.cursor()
 
+
 # idiomatic conversion from month abbreviation to number
 def month_to_number(s):
     if s == 'Jan':
@@ -112,5 +113,11 @@ def get_listing_data(item_url):
     #   year = items[6].string
     #   location = items[10].string
     #   cost = items[11].string
+    cost = items[11].string
 
-    return items[6].string, items[10].string, items[11].string, image
+    if cost == '$':
+        cost = None
+    else:
+        cost = cost.replace(',', '')[1:]
+
+    return items[6].string, items[10].string, cost, image
