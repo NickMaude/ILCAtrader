@@ -22,7 +22,7 @@ def is_null(s):
 def export(order):
     html = r"""
     <div class="table-wrapper">
-        <table class="fl-table">
+        <table width="100%" class="fl-table">
             <thead>
                 <tr>
                     <th> Date Posted</th>
@@ -35,6 +35,7 @@ def export(order):
             </thead>
             <body>
         """
+
     if order == "date":
         mycursor.execute("SELECT * FROM listings ORDER BY date DESC ")
     elif order == "state":
@@ -70,10 +71,4 @@ def export(order):
 
     post = r"<tbody></table></div>"
     html = html + post
-
-    if os.path.exists("table.html"):
-        os.remove("table.html")
-
     return html
-    # output = open("table.html", "x")
-    # output.write(html)

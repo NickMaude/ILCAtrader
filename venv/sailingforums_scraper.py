@@ -131,7 +131,7 @@ def get_listing_data(item_url):
     is_attachment = False
 
     # find images from post attachments
-    for attachment in attachments:
+    for attachment in attachments[0:10]:
         image = attachment.find('img')
         if image is not None:
             is_attachment = True

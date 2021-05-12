@@ -25,7 +25,7 @@ def rebase():
     mycursor.execute(
         "CREATE TABLE listings (date_posted VARCHAR(50), title VARCHAR(500), location VARCHAR(500), year VARCHAR(10), cost INT(10),image TEXT(90000), date DATE)"
     )
-    sailingforums_scraper.find_all_postings(15)
+    sailingforums_scraper.find_all_postings(10)
     sailboatlistings_scraper.find_all_postings(2)
 
 rebase()

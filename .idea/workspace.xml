@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f9707fb5-3a3a-4296-9ccf-f92ab522a6c2" name="Default" comment="added dropdown">
-      <change afterPath="$PROJECT_DIR$/venv/buildSite.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/cost.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/date.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/export_table_to_html.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/state.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/year.html" afterDir="false" />
+    <list default="true" id="f9707fb5-3a3a-4296-9ccf-f92ab522a6c2" name="Default" comment="added more sort options">
+      <change afterPath="$PROJECT_DIR$/venv/pages/about.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/pages/about.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/pages/cost.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/pages/date.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/pages/state.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/pages/year.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/export_to_HTML1.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lasers.css" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lasers.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lasers.html" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lasers.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/sailboatlistings_scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/sailboatlistings_scraper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/buildSite.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/buildSite.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/cost.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/date.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/export_table_to_html.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/export_table_to_html.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lasers.css" beforeDir="false" afterPath="$PROJECT_DIR$/venv/pages/lasers.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/lasers.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/sailingforums_scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/sailingforums_scraper.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/venv/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/state.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/year.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +33,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="Python Script" />
+        <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -97,6 +102,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -251,7 +257,8 @@
       <workItem from="1620591999707" duration="16325000" />
       <workItem from="1620660789307" duration="9671000" />
       <workItem from="1620672221236" duration="23491000" />
-      <workItem from="1620752623023" duration="10141000" />
+      <workItem from="1620752623023" duration="14176000" />
+      <workItem from="1620838528563" duration="8672000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1620584102481</created>
@@ -302,7 +309,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620754030031</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="added more sort options">
+      <created>1620777616786</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1620777616786</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -345,10 +359,11 @@
     <MESSAGE value="stylesheet" />
     <MESSAGE value="optimized html parsing" />
     <MESSAGE value="added dropdown" />
-    <option name="LAST_COMMIT_MESSAGE" value="added dropdown" />
+    <MESSAGE value="added more sort options" />
+    <option name="LAST_COMMIT_MESSAGE" value="added more sort options" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/laserfinder$server__1_.coverage" NAME="server (1) Coverage Results" MODIFIED="1620776748348" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
+    <SUITE FILE_PATH="coverage/laserfinder$server__1_.coverage" NAME="server (1) Coverage Results" MODIFIED="1620856306163" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
     <SUITE FILE_PATH="coverage/laserfinder$funtable.coverage" NAME="export_to_HTML1 Coverage Results" MODIFIED="1620675071020" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
     <SUITE FILE_PATH="coverage/laserfinder$sailboatlistings_scraper.coverage" NAME="sailboatlistings_scraper Coverage Results" MODIFIED="1620681073565" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
     <SUITE FILE_PATH="coverage/laserfinder$export_to_HTML.coverage" NAME="export_to_HTML Coverage Results" MODIFIED="1620667379159" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
