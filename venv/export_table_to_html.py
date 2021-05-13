@@ -1,14 +1,9 @@
 import mysql.connector
 import listing
 import os
+import SQL_connection_info
 
-db = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    passwd="Fuzyman#123",
-    database="posting",
-    port='3306'
-)
+db = SQL_connection_info.connect()
 
 mycursor = db.cursor()
 

@@ -3,18 +3,13 @@ import asyncio
 import requests
 import re
 import listing
+import SQL_connection_info
 from datetime import date
 
 from bs4 import BeautifulSoup
 from random import randint
 
-db = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    passwd="Fuzyman#123",
-    database="posting",
-    port='3306'
-)
+db = SQL_connection_info.connect()
 
 mycursor = db.cursor()
 
