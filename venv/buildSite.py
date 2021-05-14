@@ -17,7 +17,7 @@ def build(order):
                     <option value="cost.html">Sort by price </option>
                     <option value="state.html">Sort by State</option>
                     <option value="year.html">sort by year</option>
-                    <option value="home.html">Home Page</option>
+                    <option value="index.html">Home Page</option>
                     <option value="4">verified posts (Coming Soon) </option>
                     <option value="5">create posting (Coming Soon) </option>
                 </select>
