@@ -15,7 +15,7 @@ mycursor = db.cursor()
 def run_server():
     rebase()
     build_site()
-    upload.upload_All_Files();
+    upload.upload_All_Files()
 
 def build_site():
     buildSite.build("date")

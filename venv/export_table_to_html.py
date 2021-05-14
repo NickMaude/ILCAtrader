@@ -31,6 +31,7 @@ def export(order):
             <body>
         """
 
+    #mycursor.execute('SET GLOBAL max_allowed_packet=67108864')
     if order == "date":
         mycursor.execute("SELECT * FROM listings ORDER BY date DESC ")
     elif order == "state":
