@@ -110,7 +110,7 @@ def get_listing_data(item_url):
     #   cost = items[11].string
     cost = items[11].string
 
-    if cost == '$':
+    if cost == '$' or cost is None:
         cost = None
     else:
         cost = cost.replace(',', '')[1:]
