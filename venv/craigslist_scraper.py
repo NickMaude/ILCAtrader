@@ -83,7 +83,7 @@ def find_all_postings(max_pages):
             data = get_listing_data(href)
 
             # if the post is still up and its not a wanted post
-            if (data is not None) or ('wanted' not in title):
+            if (data is not None) and ('wanted' not in title):
                 mycursor.execute(
                    "INSERT INTO listings (date_posted, title, location ,year ,cost ,image ,date) VALUES (%s,%s,%s,%s,%s,%s,%s)",
                    (data[0], title, data[1], None, data[2], data[3], data[4])
