@@ -5,6 +5,7 @@ import re
 import listing
 import SQL_connection_info
 from datetime import date
+import datetime
 
 from bs4 import BeautifulSoup
 from random import randint
@@ -12,34 +13,6 @@ from random import randint
 db = SQL_connection_info.connect()
 
 mycursor = db.cursor()
-
-# idiomatic conversion from month abbreviation to number
-def month_to_number(s):
-    if s == 'Jan':
-        return '01'
-    if s == 'Feb':
-        return '02'
-    if s == 'Mar':
-        return '03'
-    if s == 'Apr':
-        return '04'
-    if s == 'May':
-        return '05'
-    if s == 'Jun':
-        return '06'
-    if s == 'Jul':
-        return '07'
-    if s == 'Aug':
-        return '08'
-    if s == 'Sep':
-        return '09'
-    if s == 'Oct':
-        return '10'
-    if s == 'Nov':
-        return '11'
-    if s == 'Dec':
-        return '12'
-    return 'N/A'
 
 
 def find_all_postings(max_pages):
@@ -73,24 +46,20 @@ def find_all_postings(max_pages):
             # data[2] = cost
             # data[1] = title
             # data[0] = year
-
-            mycursor.execute(
-                "INSERT INTO listings (date_posted, title, location ,year ,cost ,image ,date) VALUES (%s,%s,%s,%s,%s,%s,%s)",
-                (data[4], title, data[1], data[0], data[2], data[3], data[5])
-            )
-            db.commit()
+            if "Sold" not in title:
+                mycursor.execute(
+                    "INSERT INTO listings (date_posted, title, location ,year ,cost ,image ,date) VALUES (%s,%s,%s,%s,%s,%s,%s)",
+                    (data[4], title, data[1], data[0], data[2], data[3], data[5])
+                )
+                db.commit()
         page += 1
 
 
 # convert date (month name, day, year) to SQL Date type (month number-day-year)
 #   ex - May 05, 2021 to 2021-
 def get_numrical_date(date_posted):
-    if len(date_posted) > 15:
+    if len(date_posted) > 15 or 'minutes' in date_posted:
         return date.today().strftime("%Y-%m-%d")
-
-    year = date_posted[-4:]
-    month = month_to_number(date_posted[0:3])
-    day = date_posted[4:6]
     if ',' in day:
         day = '0' + day[0]
     return year + '-' + month + '-' + day
@@ -106,9 +75,11 @@ def get_listing_data(item_url):
     soup = BeautifulSoup(plain_text, "html.parser")
 
     # date to be displayed
-    date_posted = soup.find('time', {'class': 'u-dt'}).text
+    date_posted = soup.find('time', {'class': 'u-dt'}).get('title')[:12]
+
     # SQL date type to be searched
-    numerical_date = get_numrical_date(date_posted)
+    numerical_date =soup.find('time', {'class': 'u-dt'}).get('datetime')[:10]
+
 
     # find cost and location if provided
     items = soup.findAll('dl', {'class': 'pairs pairs--columns pairs--fixedSmall'})
