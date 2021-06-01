@@ -6,6 +6,7 @@ import listing
 import SQL_connection_info
 from datetime import date
 import datetime
+import re
 
 from bs4 import BeautifulSoup
 from random import randint
@@ -27,11 +28,18 @@ def find_all_postings(max_pages):
 
         # find link to each posting
         for item in soup.findAll('div', {'class': 'structItem-title'}):
+            year = None
             link = item.find('a')
 
             href = "https://sailingforums.com/" + link.get('href')
             # just the text, not the HTML
             title = link.string.lower().title()
+
+            years = list(map(int, re.findall(r'\d+', title)))
+            if len(years) != 0:
+                if 2023 > years[0] > 1900:
+                    year = years[0]
+
             if len(title) > 60:
                 title = title[0:60] + "..."
             title = '<p><a href=' + href + '>' + title + '</a></p>'
@@ -49,7 +57,7 @@ def find_all_postings(max_pages):
             if "Sold" not in title:
                 mycursor.execute(
                     "INSERT INTO listings (date_posted, title, location ,year ,cost ,image ,date) VALUES (%s,%s,%s,%s,%s,%s,%s)",
-                    (data[4], title, data[1], data[0], data[2], data[3], data[5])
+                    (data[4], title, data[1], year, data[2], data[3], data[5])
                 )
                 db.commit()
         page += 1
@@ -63,6 +71,7 @@ def get_numrical_date(date_posted):
     if ',' in day:
         day = '0' + day[0]
     return year + '-' + month + '-' + day
+
 
 # scrape data from the individual listings page
 def get_listing_data(item_url):
@@ -78,14 +87,13 @@ def get_listing_data(item_url):
     date_posted = soup.find('time', {'class': 'u-dt'}).get('title')[:12]
 
     # SQL date type to be searched
-    numerical_date =soup.find('time', {'class': 'u-dt'}).get('datetime')[:10]
-
+    numerical_date = soup.find('time', {'class': 'u-dt'}).get('datetime')[:10]
 
     # find cost and location if provided
     items = soup.findAll('dl', {'class': 'pairs pairs--columns pairs--fixedSmall'})
     if len(items) > 0:
         cost = items[0].find('dd').text.strip()
-        #cost = "$" + '{:,}'.format(int(cost))
+        # cost = "$" + '{:,}'.format(int(cost))
         location = items[1].find('dd').text.strip().lower().title()
     else:
         cost = None
