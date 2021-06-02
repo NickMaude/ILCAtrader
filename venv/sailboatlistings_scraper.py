@@ -98,21 +98,34 @@ def get_listing_data(item_url):
 
     # gather all bolded words
     items = soup.findAll('font', {'face': 'Arial, Helvetica, sans-serif'})
-    image = soup.find('img', {'class': 'mainsailboatphoto'})
-    # if posting has
-    if image is not None:
-        image = "https://www.sailboatlistings.com/" + image.get('src')
-        image = '<img src =' + image + '  "Trulli" width="100" height="66">'
+    main_image = soup.find('img', {'class': 'mainsailboatphoto'})
 
-    # return the year, location, cost, image from the posting
-    #   year = items[6].string
-    #   location = items[10].string
-    #   cost = items[11].string
+    all_images = []
+    images = soup.findAll('img', {'class': 'tns'})
+
+    if main_image is not None:
+        main_image = "https://www.sailboatlistings.com/" + main_image.get('src')
+        main_image = '<img src =' + main_image + '  "Trulli" width="100" height="66">'
+    if images is not None:
+        for img in images[:-1]:
+            img = "https://www.sailboatlistings.com/" + img.get('src')
+            img = '<img src =' + img + '  "Trulli" width="100" height="66">'
+            all_images.append(img)
+    all_images.insert(0, main_image)
+    if len(all_images) == 0:
+        all_images = None
+    else:
+        # flatten array of html images
+        all_images = ' '.join(map(str, all_images))
+
     cost = items[11].string
 
     if cost == '$' or cost is None:
         cost = None
     else:
         cost = cost.replace(',', '')[1:]
-
-    return items[6].string, items[10].string, cost, image
+    # return the year, location, cost, image from the posting
+    #   year = items[6].string
+    #   location = items[10].string
+    #   cost = items[11].string
+    return items[6].string, items[10].string, cost, all_images

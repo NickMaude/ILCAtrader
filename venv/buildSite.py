@@ -8,7 +8,7 @@ def build(order):
         <head>
             <link rel="stylesheet" href="lasers.css">
         </head>
-        <h2>ILCA Finder</h2>
+        <h2>Used Laser Sailboats for sale</h2>
         <section class="container">
             <div class="dropdown">
                 <select name="one" class="dropdown-select" onchange="location = this.value;">
