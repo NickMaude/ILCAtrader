@@ -8,6 +8,7 @@ def build(order):
         <head>
             <link rel="stylesheet" href="lasers.css">
         </head>
+        <button class="button" onclick="location.href = 'https://ilcafinder.com/';">About</button>
         <h2>Used Laser Sailboats for sale</h2>
         <section class="container">
             <div class="dropdown">
@@ -17,7 +18,6 @@ def build(order):
                     <option value="cost.html">Sort by price </option>
                     <option value="state.html">Sort by State</option>
                     <option value="year.html">sort by year</option>
-                    <option value="../index.html">About Page</option>
                     <option value="4">verified posts (Coming Soon) </option>
                     <option value="5">create posting (Coming Soon) </option>
                 </select>

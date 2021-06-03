@@ -1,8 +1,32 @@
 
+
 body {
   font: 13px/20px "Lucida Grande", Tahoma, Verdana, sans-serif;
   color: #404040;
   background: #93cedf;
+}
+
+.button {
+     position:absolute;
+  top: 10px;
+  right:0;
+    margin-right: 70px;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+    border: 1px solid;
+  border-color: white #ffffff whitesmoke;
+  border-radius: 3px;
+  background-image: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.06));
+  background-image: -moz-linear-gradient(top, transparent, rgba(0, 0, 0, 0.06));
+  background-image: -o-linear-gradient(top, transparent, rgba(0, 0, 0, 0.06));
+  background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.06));
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
 }
 
 .container {
@@ -17,6 +41,7 @@ body {
 }
 
 .dropdown {
+
   display: inline-block;
   position: relative;
   overflow: hidden;
@@ -164,7 +189,7 @@ h2{
     text-transform: uppercase;
     letter-spacing: 1px;
     color: white;
-    padding: 30px 0;
+    padding: 3px 0;
 }
 
 /* Table Styles */
