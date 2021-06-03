@@ -8,7 +8,7 @@ def build(order):
         <head>
             <link rel="stylesheet" href="lasers.css">
         </head>
-        <button class="button" onclick="location.href = 'https://ilcafinder.com/';">About</button>
+        <button class="button" onclick="location.href = 'https://ilcafinder.com/about.html';">About</button>
         <h2>Used Laser Sailboats for sale</h2>
         <section class="container">
             <div class="dropdown">
