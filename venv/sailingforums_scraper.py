@@ -120,9 +120,9 @@ def get_listing_data(item_url):
             pictures = pictures.findAll('img', {'class': 'bbImage'})
             if pictures is not None:
                 for picture in pictures:
-                    picture = 'http://sailingforums.com' + picture.get('src')
-                    picture = '<img src =' + picture + ' "Trulli" width="100" height="66">'
-                    images.append(str(picture))
+                    imgsrc = 'http://sailingforums.com' + picture.get('src')
+                    imgsrc = '<img src =' + imgsrc + ' "Trulli" width="100" height="66">'
+                    images.append(str(imgsrc))
 
     if len(images) == 0:
         images = None
