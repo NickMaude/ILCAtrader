@@ -72,7 +72,8 @@ def find_all_postings(max_pages):
             link = postings.find('a', {'class': 'gs-title'})
             href = "" + link.get('href')
             # just the text, not the HTML
-            title = link.find('b').text +" "+ link.text
+            if link.find('b') != None:
+                title = link.find('b').text +" "+ link.text
 
 
             if len(title) > 75:
